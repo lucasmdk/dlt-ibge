@@ -4,3 +4,20 @@
 log_level="WARNING"  # the system log level of dlt
 # use the dlthub_telemetry setting to enable/disable anonymous usage data reporting, see https://dlthub.com/docs/reference/telemetry
 dlthub_telemetry = true
+
+
+[sources]
+# IBGE sources
+[[sources.ibge]]
+type = "rest_api"
+url = "https://servicodados.ibge.gov.br/api/v1/localidades"
+method = "GET"
+header = {}
+params = {}
+
+
+[destinations]
+# Ingestion target
+[[destinations.filesystem1]]
+path = ./bronze
+format = "json"
