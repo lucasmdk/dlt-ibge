@@ -19,5 +19,5 @@ params = {}
 [destinations]
 # Ingestion target
 [[destinations.filesystem1]]
-path = ./bronze
+path = "./bronze"
 format = "json"
