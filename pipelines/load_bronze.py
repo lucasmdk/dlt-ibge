@@ -27,6 +27,7 @@ def load_json_to_duckdb(json_file: str, table_name: str, schema_name:str) -> Non
 
     print(f"Data from {json_file} load into table {schema_name}.{table_name} in DuckDB.")
 
+
 # Main function
 if __name__ == "__main__":
     # Define parameters

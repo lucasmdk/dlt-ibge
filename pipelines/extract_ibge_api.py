@@ -35,6 +35,7 @@ def load_ibge_data(endpoint: str) -> None:
 
     print(f"Data from {endpoint} saved in: {file_path}")
 
+
 # Main function
 if __name__ == "__main__":
     endpoints = ['municipios']
