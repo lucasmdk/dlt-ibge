@@ -10,13 +10,6 @@ def load_ibge_data(endpoint: str) -> None:
     # Define url
     url = f"https://servicodados.ibge.gov.br/api/v1/localidades/{endpoint}"
 
-    # # Build pipeline
-    # pipeline = dlt.pipeline(
-    #     pipeline_name=f"ibge_{endpoint}",
-    #     destination='filesystem',
-    #     dataset_name=f"{endpoint}_data"
-    # )
-
     # Create request
     response = requests.get(url)
     response.raise_for_status()
