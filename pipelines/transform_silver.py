@@ -3,10 +3,15 @@ from pyspark.sql.functions import col, regexp_extract, udf
 from pyspark.sql.types import StructType, StructField, IntegerType, StringType
 import duckdb
 import re
+import os
+
+# JAR path
+jdb_jar_path = os.path.abspath("drivers/duckdb_jdbc-0.10.2.jar")
 
 # Start SparkSession
 spark = SparkSession.builder \
     .appName("transform_silver") \
+    .config("spark.jars", jdb_jar_path) \
     .getOrCreate()
 
 # Read bronze data from DuckDB
